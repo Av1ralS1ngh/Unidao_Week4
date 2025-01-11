@@ -54,4 +54,7 @@ contract NFT is ERC721, Ownable {
             ? string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseExtension))
             : "";
     }
+    function _baseURI() internal view virtual override returns (string memory) {
+        return baseUri;
+    }
 }
